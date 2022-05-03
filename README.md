@@ -15,6 +15,9 @@ Add ability to retain results of previous runs and add to them rather than start
 In the project directory, you can run:
 
 ## `npm install`
+
+Installs the required libraries
+
 ## `npm start`
 
 Runs the app in the development mode.\
