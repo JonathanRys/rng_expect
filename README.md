@@ -14,7 +14,8 @@ Add ability to retain results of previous runs and add to them rather than start
 
 In the project directory, you can run:
 
-### `npm start`
+## `npm install`
+## `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
