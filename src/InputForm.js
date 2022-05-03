@@ -76,21 +76,26 @@ const InputForm = (props) => {
     return {
       max: max,
       count: results.length,
-      total: results.reduce((acc, a) => acc + a, 0),
       average: results.reduce((acc, a) => acc + a, 0) / results.length,
       chartData: results
     };
   }
 
   React.useEffect(() => {
-    if (isLoading) {
+    const calculate = () => {
       const result = findBestOf(calcRng, reps);
       console.log('result:', result)
       props.setChartData(transformChartData(result.chartData));
+      // This is the only data the parent needs to know about that the chart doesn't
       props.setMaxValue(result.max);
       setIsLoading(false);
+    };
+
+    if (isLoading) {
+      // Calculate update the state and causes it's own re-render so defer this
+      setTimeout(calculate, 0);
     }
-  });
+  }, [isLoading]);
 
   const handleClick = () => {
     setIsLoading(true);

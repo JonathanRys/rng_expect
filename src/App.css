@@ -28,7 +28,15 @@
 }
 
 .chart-container {
+  display: flex;
+  justify-content: center;
   padding: 0 40px;
+
+}
+
+.chart-container > * {
+  max-width: 1024px;
+  max-height: 400px;
 }
 
 .input-form {
@@ -48,8 +56,14 @@
 .input-form > div > input {
   margin-top: 5px;
 }
+
 input {
   border-radius: 5px;
   display: block;
   padding: 5px 8px;
+}
+
+input[type='button'] {
+  padding:  8px 15px;
+  font-weight: bold;
 }
